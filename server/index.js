@@ -14,12 +14,14 @@ app.use(
 
 //routes
 const itemRouter = require("./routes/items.router");
+const salesRouter = require("./routes/sales.router");
 
 app.get("/", (req, res) => {
   res.send("Inventory Management");
 });
 
 app.use("/api/items", itemRouter);
+app.use("/api/sales", salesRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ error: "Route not found" });

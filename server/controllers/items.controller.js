@@ -27,4 +27,24 @@ const getItems = async () => {
   }
 };
 
-module.exports = { addItem, getItems };
+const deleteItem = async (itemId) => {
+  try {
+    const deletedItem = await Item.findByIdAndDelete(itemId);
+    return deletedItem;
+  } catch (error) {
+    console.error("Error deleting item", error);
+  }
+};
+
+const updateItem = async (itemId, updatedDetails) => {
+  try {
+    const item = await Item.findById(itemId);
+    Object.assign(item, updatedDetails);
+    const updatedItem = await item.save();
+    return updatedItem;
+  } catch (error) {
+    console.error("Error updating item", error);
+  }
+};
+
+module.exports = { addItem, getItems, deleteItem, updateItem };
