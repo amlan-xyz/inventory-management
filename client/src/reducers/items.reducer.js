@@ -38,6 +38,36 @@ export const inventoryManagementReducer = (state = initialState, action) => {
         loading: false,
         error: "Error adding items",
       };
+    case "DELETE_ITEM_SUCCESS":
+      return {
+        ...state,
+        items: state.items.filter(({ _id }) => _id !== action.payload._id),
+        loading: false,
+        error: null,
+      };
+    case "DELETE_ITEM_FAILURE":
+      return {
+        ...state,
+        error: "Error deleting items",
+        loading: false,
+      };
+    case "UPDATE_ITEM_SUCCESS":
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          if (action.payload._id === item._id) {
+            return action.payload;
+          }
+          return item;
+        }),
+        loading: false,
+      };
+    case "UPDATE_ITEM_FAILURE":
+      return {
+        ...state,
+        error: "Error updating item",
+        loading: false,
+      };
     default:
       return state;
   }

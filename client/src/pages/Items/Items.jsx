@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, fetchItems } from "../../actions/items.actions";
+import {
+  addItem,
+  deleteItem,
+  fetchItems,
+  updateItem,
+} from "../../actions/items.actions";
 
 export const Items = () => {
   const dispatch = useDispatch();
@@ -14,9 +19,17 @@ export const Items = () => {
     category: "",
   });
 
+  const [editForm, setEditForm] = useState({
+    price: "",
+    quantity: "",
+  });
+
+  const [show, setShow] = useState(false);
+
+  const [itemId, setItemId] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
     dispatch(addItem(form));
     setForm({
       itemName: "",
@@ -26,6 +39,17 @@ export const Items = () => {
     });
   };
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+    dispatch(updateItem(itemId, editForm));
+    setShow(false);
+    setEditForm({
+      price: "",
+      quantity: "",
+    });
+    setItemId("");
+  };
+
   useEffect(() => {
     dispatch(fetchItems());
   }, [dispatch]);
@@ -33,6 +57,35 @@ export const Items = () => {
   return (
     <section className="items__section">
       <h1>Items page</h1>
+      {show && (
+        <form onSubmit={handleEdit}>
+          <label htmlFor="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            value={editForm.price}
+            onChange={(e) =>
+              setEditForm((editForm) => ({
+                ...editForm,
+                price: e.target.value,
+              }))
+            }
+          />
+          <label htmlFor="qty">Quantity</label>
+          <input
+            type="number"
+            id="qty"
+            value={editForm.quantity}
+            onChange={(e) =>
+              setEditForm((editForm) => ({
+                ...editForm,
+                quantity: e.target.value,
+              }))
+            }
+          />
+          <button>Update</button>
+        </form>
+      )}
       <form onSubmit={handleSubmit} className="items__form">
         <label htmlFor="name">Item name</label>
         <input
@@ -85,6 +138,21 @@ export const Items = () => {
               return (
                 <li key={_id} className="items__list-item">
                   {item_name} || {price} || {quantity} || {category}
+                  <button onClick={() => dispatch(deleteItem(_id))}>
+                    Delete
+                  </button>
+                  <button
+                    onClick={() => {
+                      setEditForm({
+                        price: item.price,
+                        quantity: item.quantity,
+                      });
+                      setItemId(item._id);
+                      setShow(true);
+                    }}
+                  >
+                    Edit
+                  </button>
                 </li>
               );
             })}
