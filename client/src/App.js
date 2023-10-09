@@ -8,11 +8,13 @@ function App() {
   return (
     <div className="main__container">
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/sales" element={<Sales />} />
-        <Route path="/items" element={<Items />} />
-      </Routes>
+      <div className="main__body">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/items" element={<Items />} />
+        </Routes>
+      </div>
     </div>
   );
 }
