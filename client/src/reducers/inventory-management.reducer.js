@@ -68,6 +68,32 @@ export const inventoryManagementReducer = (state = initialState, action) => {
         error: "Error updating item",
         loading: false,
       };
+    case "FETCH_SALES_SUCCESS":
+      return {
+        ...state,
+        sales: action.payload,
+        loading: false,
+        error: null,
+      };
+    case "FETCH_SALES_FAILURE":
+      return {
+        ...state,
+        error: "Error fetching sales",
+        loading: false,
+      };
+    case "ADD_SALE_SUCCESS":
+      return {
+        ...state,
+        sales: [...state.sales, action.payload.savedSale],
+        error: null,
+        loading: false,
+      };
+    case "ADD_SALE_FAILURE":
+      return {
+        ...state,
+        error: "Adding sales failed",
+        loading: false,
+      };
     default:
       return state;
   }
