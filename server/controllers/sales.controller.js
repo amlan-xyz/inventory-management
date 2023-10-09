@@ -21,7 +21,7 @@ const addSale = async (saleDetails) => {
       saleId: createTxId(),
       item: item.item_name,
       quantity: saleDetails.quantity,
-      price: saleDetails.price,
+      price: item.price,
     };
     const newSale = new Sale(sale);
     const savedSale = await newSale.save();
