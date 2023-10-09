@@ -6,9 +6,11 @@ const { addSale, getSales } = require("../controllers/sales.controller");
 router.post("", async (req, res) => {
   const salesDetails = req.body;
   try {
-    const newSale = await addSale(salesDetails);
-    if (newSale) {
-      res.status(201).json({ message: "Sale completed", data: newSale });
+    const { savedSale, updatedItem } = await addSale(salesDetails);
+    if (savedSale && updatedItem) {
+      res
+        .status(201)
+        .json({ message: "Sale completed", data: { savedSale, updatedItem } });
     } else {
       res.status(400).json({ message: "Sale failed" });
     }
