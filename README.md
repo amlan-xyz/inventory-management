@@ -15,10 +15,10 @@ The application also exposes the following API endpoints:
 1. /api/items
 - GET: Fetches a list of items available in the inventory.
 - POST: Adds a new item to the inventory.
-2./api/items/:id
+2. /api/items/:id
 - DELETE: Removes an item from the inventory by it's unique ID.
 - POST : Update the items details available in the inventory.
-2. /api/sales
+3. /api/sales
 - GET: Fetches a sales records.
 - POST: Adds a new sale record.
 
