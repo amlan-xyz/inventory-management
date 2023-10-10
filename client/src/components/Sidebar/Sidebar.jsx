@@ -38,7 +38,7 @@ export const Sidebar = () => {
             <MdListAlt />
           </span>
           <Link className="sidebar__li-item" to="/sales">
-            Sales History
+            Sales
           </Link>
         </li>
       </ul>

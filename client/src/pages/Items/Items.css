@@ -1,0 +1,50 @@
+.items__body {
+  margin-top: 2rem;
+}
+.items__list {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+.items__list-header th {
+  font-size: 1rem;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+}
+
+.items__list-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.items__list-item button {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.items__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.items__form input,
+select {
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+}
+.items__form label {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.items__form-btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--secondary-color);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}

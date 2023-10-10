@@ -1,0 +1,32 @@
+.dashboard__cards {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard__cards-body {
+  height: 230px;
+  width: 250px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.dashboard__cards-icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.dashboard__cards-value {
+  font-size: 3.2rem;
+  color: var(--primary-color);
+}
+
+.dashboard__cards-info {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.dashboard__body {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
