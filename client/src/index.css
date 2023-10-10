@@ -35,7 +35,61 @@ button:hover {
 }
 
 .main__body {
-  outline-style: solid;
-  margin: 3rem 2rem 2rem 400px;
+  margin: 4rem 2rem 2rem 430px;
   min-width: 1024px;
+}
+
+.section__header {
+  font-size: 1.5rem;
+}
+
+.primary__btn {
+  border: none;
+  box-shadow: var(--shadow);
+  padding: 0.5rem 0.8rem;
+  min-width: max-content;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+.modal_wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(189, 189, 189, 0.9);
+}
+
+.modal_container {
+  position: fixed;
+  min-width: 30rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.modal_close-btn {
+  border: none;
+  font-size: 1.5rem;
+  transform: translate(390px, 25px);
+  margin-top: -2rem;
+}
+.modal_close-btn:hover {
+  cursor: pointer;
+}
+
+tr,
+td,
+th {
+  border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
