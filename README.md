@@ -2,7 +2,7 @@
 # [Inventory Management](https://inventory-management-by-amlan.vercel.app/)
 
 ## [Replit](https://replit.com/@theweird0ne/Inventory-Management) (Inventory Management API)
-This repository contains the code for a web application designed to help users to track their inventory, slaes report, revenue generated, sales records etc.
+This repository contains the code for a web application designed to help users to track their inventory, sales report, revenue generated, sales records etc.
 
 ## Features
 1. Dashboard: Displays a summary of sales & inventory metrics, including total revenue earned, total inventory left, number of sales occured.
