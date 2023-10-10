@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/api/sales";
+const url = "https://inventory-management.theweird0ne.repl.co/api/sales";
 
 const fetchSales = () => async (dispatch) => {
   try {
