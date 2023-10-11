@@ -11,11 +11,12 @@ import "./Items.css";
 
 import { LuClipboardEdit, LuTrash2 } from "react-icons/lu";
 import { RxCross2 } from "react-icons/rx";
+import { Filter } from "../../components/Filters/Filter";
 import { Loader } from "../../components/Loader/Loader";
 
 export const Items = () => {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.filteredItems);
   const loading = useSelector((state) => state.loading);
 
   const [form, setForm] = useState({
@@ -70,6 +71,7 @@ export const Items = () => {
         <button onClick={() => setShow(true)} className="primary__btn">
           Add Item
         </button>
+        <Filter />
       </div>
 
       {loading ? (

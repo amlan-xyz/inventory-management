@@ -48,3 +48,9 @@ select {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
 }
+
+.items__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

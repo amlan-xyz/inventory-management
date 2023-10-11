@@ -1,5 +1,6 @@
 const initialState = {
   items: [],
+  filteredItems: [],
   sales: [],
   loading: false,
   error: null,
@@ -16,6 +17,7 @@ export const inventoryManagementReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
+        filteredItems: action.payload,
         loading: false,
         error: null,
       };
@@ -93,6 +95,15 @@ export const inventoryManagementReducer = (state = initialState, action) => {
         ...state,
         error: "Adding sales failed",
         loading: false,
+      };
+    case "FILTER_BY_CATEGORY":
+      return {
+        ...state,
+        filteredItems: state.items.filter(
+          ({ category }) => category === action.payload
+        ),
+        loading: false,
+        error: null,
       };
     default:
       return state;
