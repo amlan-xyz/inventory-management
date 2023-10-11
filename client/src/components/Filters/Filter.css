@@ -1,9 +1,13 @@
 .filter {
   display: flex;
+  align-items: center;
+}
+
+.filter p {
+  font-size: 1.2rem;
 }
 
 .filter label,
 input {
   margin-left: 1rem;
-  font-size: 1.2rem;
 }
